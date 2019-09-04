@@ -9,7 +9,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _playerOne = Player(name: 'Nós', score: 0, victories: 0);
   var _playerTwo = Player(name: 'Elas', score: 0, victories: 0);
-  
   void _resetScore(Player player, bool resetScore) {
     setState(() {
       player.score = resetScore ? 0 : player.victories;
