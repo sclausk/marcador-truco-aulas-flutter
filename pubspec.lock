@@ -158,3 +158,4 @@ packages:
     version: "0.1.2+8"
 sdks:
   dart: ">=2.2.2 <3.0.0"
+/**/

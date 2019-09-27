@@ -69,9 +69,9 @@ void _resetVictories(Player player,  bool resetVictories) {
     );
   }
 
-  Widget _buildRoundedButton({String label, String text, Color color, Function onTap}) {
+  Widget _buildRoundedButton({String label, String text, Color color, Function onTap, Function onDoubleTap}) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap, onDoubleTap: onDoubleTap,
       child: ClipOval(
         child: Container(
           height: 52.0,
@@ -146,7 +146,7 @@ void _resetVictories(Player player,  bool resetVictories) {
               }
             ),
             _buildRoundedButton(
-              label: '+3',
+              label: 'T',
               color: Colors.black54.withOpacity(0.75),
               onTap: () {
                 setState(() {
@@ -155,7 +155,7 @@ void _resetVictories(Player player,  bool resetVictories) {
                       player.score-=3;
                   }
                 });
-                 if ((_playerOne.score == 11) && (_playerTwo.score == 11)) 
+                if ((_playerOne.score == 11) && (_playerTwo.score == 11)) 
                 {
                   _showAlertDialog(
                     title: 'Mão de Ferro',
@@ -183,14 +183,20 @@ void _resetVictories(Player player,  bool resetVictories) {
                   });
                 });
                 }
-              })
+              }/*,
+              onDoubleTap: () { 
+                setState(() {
+                 player.score+=6; 
+                });
+              }*/
+              )
       ],
     );
   }
 
   Widget _showAppBar() {
     return AppBar(
-        title: Text("Marcador de Pontos (Truco!)"),
+        title: Text("Marcador de Pontos"),
         actions: <Widget>[
     IconButton(
     icon: Icon(Icons.redo),
