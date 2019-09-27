@@ -16,7 +16,7 @@ Aplicativo para marcar os pontos no jogo de truco criado para disciplina de Prog
 * [ ] Trocar os nomes dos usuários ao clicar em cima do nome.
 * [x] Exibir uma notificação da mão de ferro.
 * [x] Instale o plugin Screen e adicione um código para deixar a tela sempre ativa enquanto joga.
-* [e] Inserir botão para truco com AlertDialog (+3 +6 +9);
+* //  [ ] Inserir botão para truco com AlertDialog (+3 +6 +9); 
 
 ## Licença
 
