@@ -96,7 +96,7 @@ void _resetVictories(Player player,  bool resetVictories) {
       children: <Widget>[
         _buildRoundedButton(
             label: '-1',
-            color: Colors.black87.withOpacity(0.25),
+            color: Colors.black87.withOpacity(0.35),
             onTap: () {
               setState(() {
                 player.score--;
@@ -107,7 +107,7 @@ void _resetVictories(Player player,  bool resetVictories) {
             }),
         _buildRoundedButton(
             label: '+1',
-            color: Colors.redAccent,
+            color: Colors.redAccent[700],
             onTap: () {
               setState(() {
                 player.score++;
@@ -115,7 +115,7 @@ void _resetVictories(Player player,  bool resetVictories) {
                 player.score--;
               }
               });
-                if ((_playerOne.score== 11) && (_playerTwo.score == 11)) 
+                if ((_playerOne.score == 11) && (_playerTwo.score == 11))
                 {
                   _showAlertDialog(
                     title: 'Mão de Ferro',
@@ -155,7 +155,7 @@ void _resetVictories(Player player,  bool resetVictories) {
                       player.score-=3;
                   }
                 });
-                 if ((_playerOne.score== 11) && (_playerTwo.score == 11)) 
+                 if ((_playerOne.score == 11) && (_playerTwo.score == 11)) 
                 {
                   _showAlertDialog(
                     title: 'Mão de Ferro',
