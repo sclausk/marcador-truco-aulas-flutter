@@ -5,7 +5,6 @@
 [ ] Trocar os nomes dos usuários ao clicar em cima do nome.
 [x] Exibir uma notificação da mão de ferro.
 [x] Instale o plugin Screen e adicione um código para deixar a tela sempre ativa enquanto joga.
-[e] Inserir botão para truco com AlertDialog (+3 +6 +9);
 */
 
 import 'package:flutter/material.dart';
