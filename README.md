@@ -2,6 +2,11 @@
 
 Aplicativo para marcar os pontos no jogo de truco criado para disciplina de Programação Mobile.
 
+## Desenvolvido por:
+
+Kevin Renan da Silva Claus  RA:0040481821006
+Adriano Antônio Manzano     RA:0040481821043
+
 <p align="center">
     <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/images/Prtsc_1.png" height="400"/>
     <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/images/Prtsc_2.png" height="400"/>
@@ -13,10 +18,9 @@ Aplicativo para marcar os pontos no jogo de truco criado para disciplina de Prog
 * [x] Não deixar que seja possível ficar com pontos negativos ao clicar em (-1) e também não pode ultrapassar 12 pontos.
 * [x] Permitir de alguma forma que a partida seja reiniciada, sem zerar o número de vitórias
 * [x] Transformar o AlertDialog em modal para que somente desapareça da tela ao clicar em CANCEL ou OK.
-* [ ] Trocar os nomes dos usuários ao clicar em cima do nome.
+* [x] Trocar os nomes dos usuários ao clicar em cima do nome.
 * [x] Exibir uma notificação da mão de ferro.
 * [x] Instale o plugin Screen e adicione um código para deixar a tela sempre ativa enquanto joga.
-* //  [ ] Inserir botão para truco com AlertDialog (+3 +6 +9); 
 
 ## Licença
 
