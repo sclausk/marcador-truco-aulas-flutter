@@ -8,9 +8,8 @@ Aplicativo para marcar os pontos no jogo de truco criado para disciplina de Prog
 * Adriano A. Manzano   RA:0040481821043
 
 <p align="center">
-    <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/images/Prtsc_1.png" height="400"/>
-    <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/images/Prtsc_2.png" height="400"/>
-    <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/images/Prtsc_3.png" height="400"/>
+    <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/lib/images/Marcador_Truco.png" size="400"/>
+    
 </p>
 
 ## Desafios
