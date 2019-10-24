@@ -2,10 +2,10 @@
 
 Aplicativo para marcar os pontos no jogo de truco criado para disciplina de Programação Mobile.
 
-## Desenvolvido por:
+### Desenvolvido por:
 
-Kevin Renan da Silva Claus  RA:0040481821006
-Adriano Antônio Manzano     RA:0040481821043
+* Kevin R. Silva Claus RA:0040481821006
+* Adriano A. Manzano   RA:0040481821043
 
 <p align="center">
     <img src="https://github.com/sclausk/marcador-truco-aulas-flutter/blob/master/images/Prtsc_1.png" height="400"/>
