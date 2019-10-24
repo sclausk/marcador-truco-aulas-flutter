@@ -7,8 +7,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController _changeName = TextEditingController();
   var _playerOne = Player(name: 'Nós', score: 0, victories: 0);
   var _playerTwo = Player(name: 'Elas', score: 0, victories: 0);
+  bool _isButtonDisabled = true;
+
   void _resetScore(Player player, bool resetScore) {
     setState(() {
       player.score = resetScore ? 0 : player.victories;
@@ -22,10 +25,11 @@ void _resetVictories(Player player,  bool resetVictories) {
    player.victories = resetVictories ? 0 :player.victories;
   });
 }
-  void _resetVictoriesAll(bool resetVictories) {
+
+void _resetVictoriesAll(bool resetVictories) {
     _resetVictories(_playerOne, resetVictories);
     _resetVictories(_playerTwo, resetVictories);
-  }
+}
 
   void _resetScoreAll(bool resetScore) {
     _resetScore(_playerOne, resetScore);
@@ -38,17 +42,14 @@ void _resetVictories(Player player,  bool resetVictories) {
     _resetScoreAll(true);
   }
 
-  void initSecondState() {
-    super.initState();
-    _resetVictoriesAll(true);
-  }
-
-
-  Widget _showPlayerName(String name) {
-    return Text(
+  Widget _showPlayerName(String name, Function onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Text(
       name.toUpperCase(),
       style: TextStyle(
           fontSize: 22.0, fontWeight: FontWeight.w500, color: Colors.black87),
+      ),
     );
   }
 
@@ -151,7 +152,7 @@ void _resetVictories(Player player,  bool resetVictories) {
               onTap: () {
                 setState(() {
                   player.score+=3;
-                    if (player.score >12) {
+                    if (player.score>12) {
                       player.score-=3;
                   }
                 });
@@ -183,13 +184,7 @@ void _resetVictories(Player player,  bool resetVictories) {
                   });
                 });
                 }
-              }/*,
-              onDoubleTap: () { 
-                setState(() {
-                 player.score+=6; 
-                });
-              }*/
-              )
+              })
       ],
     );
   }
@@ -225,8 +220,9 @@ void _resetVictories(Player player,  bool resetVictories) {
 
 Widget _showBoard() {
   return Row(
+    mainAxisSize: MainAxisSize.max,
     crossAxisAlignment: CrossAxisAlignment.center,
-    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: <Widget>[
       _showBoardPlayer(_playerOne),
       _showBoardPlayer(_playerTwo),
@@ -241,11 +237,20 @@ Widget _showBoardPlayer(Player player) {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _showPlayerName(player.name),
+          _showPlayerName(player.name, () {
+            _showPlayerChangedName(
+                title: '${player.name}',
+                message: 'Insira um novo nome para dupla',
+                confirm: () {
+                  setState(() {
+                    player.name = _changeName.text;
+                  });
+                },
+                cancel: () {});
+          }),
         _showPlayerScore(player.score),
         _showPlayerVictories(player.victories),
         _showPlayerScoreButtons(player),
-
       ],
     ),
   );
@@ -277,6 +282,44 @@ void _showAlertDialog(
         );
       });
     }
+
+  void _showPlayerChangedName(
+      {String title, String message, Function confirm, Function cancel}) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: _renderForm(),
+          actions: <Widget>[
+            FlatButton(
+              child: Text("Ok"),
+              onPressed: () {
+                Navigator.of(context).pop();
+                if (confirm != null) confirm();
+              },
+            ),
+            FlatButton(
+              child: Text("Não"),
+              onPressed: () {
+                Navigator.of(context).pop();
+                if (cancel != null) cancel();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _renderForm() {
+    return TextFormField(
+      controller: _changeName,
+      decoration: InputDecoration(labelText: 'Insira um nome para dupla'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -285,8 +328,9 @@ void _showAlertDialog(
     );
   }
 }
-
   @override
   Widget build(BuildContext context) {
     return null;
   }
+
+
